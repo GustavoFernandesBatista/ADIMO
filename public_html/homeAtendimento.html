@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Imobiliária ADIMO</title>
+    <link href="css/home-atendimento.css" rel="stylesheet" type="text/css"/>
+</head>
+<body>
+
+    <header>
+        <img src="img/background3.png" alt="Logo da Imobiliária"/>
+        <h1>Imobiliária ADIMO</h1>
+    </header>
+    
+<section>
+    <h2>Formulário para Cadastro de Cliente</h2>
+        <button onclick="redirectToNextPage()">Agendar Visita</button>
+</section>
+
+ <section>
+    <h2>Agendamento de Visitas</h2>
+        <button type="submit">Visitas Agendadas</button>
+</section>
+
+    <section>
+        <h2>Imóveis Disponíveis</h2>
+                    <p>Estes imóveis estão disponíveis para ofertar ao cliente</p>
+            
+                    <ul class="list list-residences">
+                        <li class="card" data-name="Casa 423m²">      
+                                <img src="img/casa1.jpeg" alt="Apartamento 100m²">
+                                <div>
+                                    <h5>Casa 303m²</h5>
+                                    <p>Vila Sofia, Rua Socrates</p>
+                                    <p>A partir de <strong>R$ 7631</strong></p>
+                                </div>
+                        </li>
+                        <li class="card" data-name="Casa 340m²">          
+                                <img src="img/casa2.jpeg" alt="Apartamento 53m²">
+                                <div>
+                                    <h5>Casa 603m²</h5>
+                                    <p>Vila Andrade, Rua Alcantarila</p>
+                                    <p>A partir de <strong>R$ 1684</strong></p>
+                                </div>
+
+                        </li>
+                        <li class="card" data-name="Casa 601m²">
+                                <img src="img/casa3.jpeg" alt="Apartamento 77m²">
+                                <div>
+                                    <h5>Casa 703m²</h5>
+                                    <p>Chacara Santo Antonio, Rua Capitão Otavio</p>
+                                    <p>A partir de <strong>R$ 2684</strong></p>
+                                </div>
+
+                        </li>
+                        <li class="card" data-name="Casa 920m²">
+                            <img src="img/casa4.jpeg" alt="Apartamento 90m²">
+                            <div>
+                                <h5>Casa 724m²</h5>
+                                <p>Campo Grande, Rua Joaquim Anselmo</p>
+                                <p>A partir de <strong>R$ 4522</strong></p>
+                            </div>
+                            <div>
+                        <li class="card" data-name="Casa 535m²">
+                            <img src="img/casa5.jpeg" alt="Apartamento 55m²">
+                            <div>
+                                <h5>Casa 753m²</h5>
+                                <p>Vila Cruzeiro, Rua Jupi</p>
+                                <p>A partir de <strong>R$ 3222</strong></p>
+                            </div>
+                            
+                        </li>
+                    </ul>
+    </section>
+    <footer>
+        <p>&copy; 2023 Imobiliária ADIMO. Todos os direitos reservados.</p>
+    </footer>
+    
+    <script>
+        function redirectToNextPage() {
+        window.location.href = "cadastroAtendimento.html";
+        }
+    </script>
+</body>
+</html>

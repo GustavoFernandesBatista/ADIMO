@@ -1,0 +1,83 @@
+body {
+    color: #ffffff;
+    font-family: "Lucida Sans Unicode", "Lucida Grande", sans-serif;
+    width: 940px;
+    margin-left: auto;
+    margin-right: auto;
+    background-image: url(../img/background.jpg);
+}
+
+h1 {
+    padding: 10px;
+}
+
+h2 {
+    border-bottom: 2px solid #333333;
+    margin-top: 30px
+}
+
+p {
+    padding: 0 45px;
+    text-indent: 15px
+}
+
+figure {
+    text-align: center;
+    padding: 10px;
+    margin: 10px;
+}
+
+figcaption {
+    font-style: italic;
+    margin-top: 10px
+}
+
+#centro-atendimento img {
+    max-width: 50%; 
+    height: auto;
+    display: block;
+    margin: 0 auto; 
+    border-radius: 20px;
+}
+
+#rodape {
+    color: #777;
+    margin: 30px 0;
+    padding: 30px 0;
+}
+
+#rodape img {
+    margin-right: 30px;
+    vertical-align: middle;
+    width: 60px;
+    border-radius: 20px;
+}
+
+#familia-dimo img {
+    float: right;
+    margin: 0 0 10px 10px;
+    width: 420px;
+    border-radius: 20px;
+}
+
+p::first-letter{
+    font-weight: bold
+}
+
+h1 + p{
+    text-indent: 0px
+}
+
+p::first-line{
+    font-variant: small-caps
+}
+
+img[src="img/adimo-logo.jpeg"] {
+    max-width: 20%;
+    height: auto;
+    float: left;
+    margin-right: 10px;
+    border-radius: 10px;
+}
+
+

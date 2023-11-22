@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Imobiliária ADIMO</title>
+    <link href="css/home.css" rel="stylesheet" type="text/css"/>
+</head>
+<body>
+
+    <header>
+        <img src="img/background3.png" alt="Logo da Imobiliária"/>
+        <h1>Imobiliária ADIMO</h1>
+    </header>
+
+ <section>
+    <h2>Pesquisar Imóveis para Locação</h2>
+    <form id="searchForm" onsubmit="event.preventDefault(); searchProperties();">
+        <label for="location">Localização:</label>
+        <input type="text" id="location" name="location" required>
+
+        <label for="minPrice">Preço Mínimo:</label>
+        <input type="number" id="minPrice" name="minPrice" min="0">
+
+        <label for="maxPrice">Preço Máximo:</label>
+        <input type="number" id="maxPrice" name="maxPrice" min="0">
+
+        <button type="submit">Buscar</button>
+    </form>
+
+  
+    <a href="sobre.html">
+        <button type="button">Historia</button>
+    </a>
+
+   
+</section>
+
+    <section>
+        <h2>Imóveis</h2>
+                    <p>Estes imóveis são compatíveis com sua renda</p>
+            
+                    <ul class="list list-residences">
+                        <li class="card" data-name="Casa 423m²">      
+                                <img src="img/casa1.jpeg" alt="Apartamento 100m²">
+                                <div>
+                                    <h5>Casa 303m²</h5>
+                                    <p>Vila Sofia, Rua Socrates</p>
+                                    <p>A partir de <strong>R$ 7631</strong></p>
+                                </div>
+                                <div>
+                                     <button onclick="addToInterestList('Casa 423m²')">Adicionar à Lista</button>
+                                </div>
+                        </li>
+                        <li class="card" data-name="Casa 340m²">          
+                                <img src="img/casa2.jpeg" alt="Apartamento 53m²">
+                                <div>
+                                    <h5>Casa 603m²</h5>
+                                    <p>Vila Andrade, Rua Alcantarila</p>
+                                    <p>A partir de <strong>R$ 1684</strong></p>
+                                </div>
+                                <div>
+                                     <button onclick="addToInterestList('Casa 340m²')">Adicionar à Lista</button>
+                                </div>
+
+                        </li>
+                        <li class="card" data-name="Casa 601m²">
+                                <img src="img/casa3.jpeg" alt="Apartamento 77m²">
+                                <div>
+                                    <h5>Casa 703m²</h5>
+                                    <p>Chacara Santo Antonio, Rua Capitão Otavio</p>
+                                    <p>A partir de <strong>R$ 2684</strong></p>
+                                </div>
+                                <div>
+                                     <button onclick="addToInterestList('Casa 601m²')">Adicionar à Lista</button>
+                                </div>
+
+                        </li>
+                        <li class="card" data-name="Casa 920m²">
+                            <img src="img/casa4.jpeg" alt="Apartamento 90m²">
+                            <div>
+                                <h5>Casa 724m²</h5>
+                                <p>Campo Grande, Rua Joaquim Anselmo</p>
+                                <p>A partir de <strong>R$ 4522</strong></p>
+                            </div>
+                            <div>
+                            </div>
+                             <button onclick="addToInterestList('Casa 920m²')">Adicionar à Lista</button>
+                        </li>
+                        <li class="card" data-name="Casa 535m²">
+                            <img src="img/casa5.jpeg" alt="Apartamento 55m²">
+                            <div>
+                                <h5>Casa 753m²</h5>
+                                <p>Vila Cruzeiro, Rua Jupi</p>
+                                <p>A partir de <strong>R$ 3222</strong></p>
+                            </div>
+                            <div>
+                                 <button onclick="addToInterestList('Casa 535m²')">Adicionar à Lista</button>
+                            </div>
+                            
+                        </li>
+                    </ul>
+    </section>
+
+    <section>
+        <h2>Minha Lista de Interesses</h2>
+        <ul id="interestList">
+        </ul>
+        <button onclick="redirectToNextPage()">Agendar Visita</button>
+    </section>
+
+    <footer>
+        <p>&copy; 2023 Imobiliária ADIMO. Todos os direitos reservados.</p>
+    </footer>
+
+    <script>
+        function searchProperties() {
+
+            document.getElementById("propertyList").innerHTML = "";
+
+            var location = document.getElementById("location").value;
+
+
+            var properties = [
+               { name: "São Paulo", image: "img/casa4.jpeg", price: "R$ 2.000,00", state: "São Paulo" },
+                { name: "Rio de Janeiro", image: "img/casa3.jpeg", price: "R$ 1.800,00", state: "Rio de Janeiro" },
+                { name: "Santa Catarina", image: "img/casa5.jpeg", price: "R$ 2.000,00", state: "Santa Catarina" },
+               
+            ];
+
+            var propertyList = document.getElementById("propertyList");
+            properties.forEach(function(property) {
+                var listItem = document.createElement("li");
+                listItem.textContent = property.name;
+
+
+                var image = document.createElement("img");
+                image.src = property.image;
+                image.alt = property.name;
+                listItem.appendChild(image);
+                
+                var priceLabel = document.createElement("p");
+                priceLabel.textContent = "Preço: " + property.price;
+                listItem.appendChild(priceLabel);
+
+                var stateLabel = document.createElement("p");
+                stateLabel.textContent = "Estado: " + property.state;
+                listItem.appendChild(stateLabel);
+
+                var addButton = document.createElement("button");
+                addButton.textContent = "Adicionar à Lista";
+                addButton.onclick = function() { addToInterestList(property.name); };
+                listItem.appendChild(addButton);
+
+                propertyList.appendChild(listItem);
+            });
+        }
+
+        function addToInterestList(propertyName) {
+            
+            var interestList = document.getElementById("interestList");
+            var listItem = document.createElement("li");
+            listItem.textContent = propertyName;
+            interestList.appendChild(listItem);
+        }
+
+      function redirectToNextPage() {
+        window.location.href = "cadastro.html";
+        }
+    </script>
+
+</body>
+</html>
